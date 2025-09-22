@@ -1,4 +1,4 @@
-# x-clone
+# X-clone
 
 A small Next.js application that recreates core UI patterns from X/Twitter. Built with Next.js, React and Tailwind CSS. The workspace indicates the developer used Bun, but npm/yarn work too.
 
