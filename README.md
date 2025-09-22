@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# x-clone
 
-## Getting Started
+A small Next.js application that recreates core UI patterns from X/Twitter. Built with Next.js, React and Tailwind CSS. The workspace indicates the developer used Bun, but npm/yarn work too.
 
-First, run the development server:
+## Quick start
+
+Install dependencies (preferred: Bun):
 
 ```bash
+bun install
+# or
+npm install
+# or
+yarn
+```
+
+Run the dev server:
+
+```bash
+bun run dev
+# or
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build and run production:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+bun run build
+bun run start
+# or
+npm run build && npm run start
+```
 
-## Learn More
+## Project layout
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/` — Next.js app router pages and layouts
+- `src/components/` — shared components (`Header.tsx`, `Menu.tsx`, etc.)
+- `src/server-actions/` — server actions (e.g. `post-tweet.ts`)
+- `src/shared/` — shared data and types
+- `public/` — static assets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Defined in `package.json`:
 
-## Deploy on Vercel
+- `dev` — `next dev --turbopack`
+- `build` — `next build --turbopack`
+- `start` — `next start`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you run into Turbopack issues, remove `--turbopack` from the scripts temporarily.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes & troubleshooting
+
+- Ensure your Node.js version is compatible with Next.js 15 / React 19 (Node 18+ recommended) if you don't use Bun.
+- If CSS or Tailwind isn't applied, check `src/app/globals.css` and `postcss.config.mjs`.
+- To use Bun, install from https://bun.sh and prefer `bun install` + `bun run dev` for faster installs and start times.
+
+## Contributing
+
+1. Fork the repo
+2. Open a branch: `git checkout -b feat/my-change`
+3. Commit and push, then open a PR
+
+## License
+
+No license file is included. Add one (for example `MIT`) if you intend to publish.
+
+---
+
+Want anything else added to the README? I can add badges, runtime version recommendations, a `CONTRIBUTING.md`, or example commands for common tasks.
